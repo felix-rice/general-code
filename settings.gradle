@@ -1,0 +1,14 @@
+rootProject.name = 'general-code'
+include 'general-code-daily-practice'
+include 'general-code-sdk'
+include 'general-code-core'
+include 'general-code-component'
+include 'general-code-api'
+include 'general-code-runner'
+include 'general-code-learning-zone'
+
+// 设置子项目的构建文件
+rootProject.children.each {project -> {
+    project.buildFileName = "${project.name}.gradle"
+}}
+

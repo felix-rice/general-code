@@ -1,0 +1,84 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.2'
+    id 'io.spring.dependency-management' version '1.1.2'
+}
+
+// 此处很重要，因为父项目实际没有逻辑，但是引入了springboot插件，会加载父项目的main class，此处将禁用其为启动项目
+bootJar {
+    enabled = false
+}
+
+allprojects {
+    group = 'com.felix'
+    version = '1.0.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    java {
+        sourceCompatibility = '20'
+    }
+
+    // 基本jdk配置
+    sourceCompatibility = 20
+    targetCompatibility = 20
+
+    compileJava.options.encoding  'UTF-8'
+    compileTestJava.options.encoding 'UTF-8'
+
+    // 仓库
+    repositories {
+        maven {url "https://maven.aliyun.com/repository/public"}
+        maven {url "https://maven.aliyun.com/repository/central"}
+        maven {url "https://maven.aliyun.com/repository/google"}
+        maven {url "https://maven.aliyun.com/repository/spring"}
+        mavenCentral()
+    }
+}
+
+subprojects {
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+    }
+
+    // 公共依赖
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        developmentOnly 'org.springframework.boot:spring-boot-devtools'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}
+
+ext['slf4j.version'] = '1.7.20'
+
+project("general-code-core") {
+    dependencies {
+        implementation project(':general-code-sdk')
+        implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    }
+}
+
+project("general-code-component") {
+    apply plugin: 'java-library'
+    dependencies {
+        implementation project(':general-code-sdk')
+        api project(':general-code-core')
+        compileOnly 'org.projectlombok:lombok:+'
+        annotationProcessor 'org.projectlombok:lombok:+'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    }
+}
+
+
+project("general-code-api") {
+    apply plugin: 'java-library'
+    dependencies {
+        implementation project(":general-code-component")
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
+
+
