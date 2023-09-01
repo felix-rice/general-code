@@ -5,3 +5,8 @@ bootJar {
 jar {
     enabled = true
 }
+
+dependencies {
+    implementation 'mysql:mysql-connector-java:8.0.31'
+    implementation 'com.baomidou:mybatis-plus:3.5.2'
+}

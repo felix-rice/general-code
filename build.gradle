@@ -4,7 +4,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.2'
 }
 
-// 此处很重要，因为父项目实际没有逻辑，但是引入了springboot插件，会加载父项目的main class，此处将禁用其为启动项目
+/**
+ * 此处很重要，因为父项目实际没有逻辑，但是引入了springboot插件，会加载父项目的main class
+ * 此处禁用bootJar，使其不能作为一个启动项目
+ */
 bootJar {
     enabled = false
 }
@@ -44,27 +47,34 @@ subprojects {
         options.encoding = 'UTF-8'
     }
 
+    configurations.configureEach {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
     // 公共依赖
     dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-log4j2'
         implementation 'org.springframework.boot:spring-boot-starter'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
 }
 
-ext['slf4j.version'] = '1.7.20'
+project("general-code-sdk") {
+
+}
 
 project("general-code-core") {
     dependencies {
         implementation project(':general-code-sdk')
         implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+        implementation 'org.apache.commons:commons-pool2'
     }
 }
 
 project("general-code-component") {
     apply plugin: 'java-library'
     dependencies {
-        implementation project(':general-code-sdk')
         api project(':general-code-core')
         compileOnly 'org.projectlombok:lombok:+'
         annotationProcessor 'org.projectlombok:lombok:+'

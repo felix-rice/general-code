@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN"
+                  value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} [%thread] %p %c{1}#%M:%L - %m%n%ex" />
+        <Property name="LOG_PATH">logs</Property>
+        <Property name="LOG_FILE">spring-boot-168</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT"
+                 follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+
+        <RollingRandomAccessFile name="FileAppender"
+                                 fileName="${LOG_PATH}/${LOG_FILE}.log"
+                                 filePattern="${LOG_PATH}/${LOG_FILE}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ConsoleAppender" level="INFO" />
+            <AppenderRef ref="FileAppender" level="INFO" />
+        </Root>
+
+        <Logger name="org.springframework.jdbc" level="INFO"
+                additivity="false">
+            <Appender-Ref ref="ConsoleAppender" />
+        </Logger>
+    </Loggers>
+</Configuration>

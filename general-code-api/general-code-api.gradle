@@ -1,3 +1,7 @@
 springBoot {
     mainClass = 'com.felix.general.code.api.Main'
 }
+
+dependencies {
+
+}
