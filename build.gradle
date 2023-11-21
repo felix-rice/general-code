@@ -21,12 +21,12 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
 
     java {
-        sourceCompatibility = '20'
+        sourceCompatibility = '21'
     }
 
     // 基本jdk配置
-    sourceCompatibility = 20
-    targetCompatibility = 20
+    sourceCompatibility = 21
+    targetCompatibility = 21
 
     compileJava.options.encoding  'UTF-8'
     compileTestJava.options.encoding 'UTF-8'
@@ -39,6 +39,10 @@ allprojects {
         maven {url "https://maven.aliyun.com/repository/spring"}
         mavenCentral()
     }
+}
+
+ext {
+    redission_version = '3.23.4'
 }
 
 subprojects {
@@ -68,6 +72,7 @@ project("general-code-core") {
     dependencies {
         implementation project(':general-code-sdk')
         implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+        implementation 'org.redisson:redisson-spring-boot-starter:3.23.4'
         implementation 'org.apache.commons:commons-pool2'
     }
 }

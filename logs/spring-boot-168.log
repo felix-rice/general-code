@@ -1,0 +1,338 @@
+2023-09-01T17:51:18.229+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarting:51 - Starting GeneralCodeApiApplication using Java 20.0.2 with PID 10700 (/Users/lixin/dev/repo/felix/general-code/general-code-api/build/classes/java/main started by lixin in /Users/lixin/dev/repo/felix/general-code)
+2023-09-01T17:51:18.262+0800 [restartedMain] INFO GeneralCodeApiApplication#logStartupProfileInfo:640 - The following 1 profile is active: "dev"
+2023-09-01T17:51:18.695+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-01T17:51:18.710+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-01T17:51:22.741+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:51:22.747+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-01T17:51:22.799+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
+2023-09-01T17:51:22.884+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:51:22.888+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-01T17:51:22.921+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2023-09-01T17:51:25.884+0800 [restartedMain] INFO TomcatWebServer#initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2023-09-01T17:51:25.915+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-09-01T17:51:25.922+0800 [restartedMain] INFO StandardService#log:173 - Starting service [Tomcat]
+2023-09-01T17:51:25.923+0800 [restartedMain] INFO StandardEngine#log:173 - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-01T17:51:26.160+0800 [restartedMain] INFO [/]#log:173 - Initializing Spring embedded WebApplicationContext
+2023-09-01T17:51:26.161+0800 [restartedMain] INFO ServletWebServerApplicationContext#prepareWebApplicationContext:291 - Root WebApplicationContext: initialization completed in 7446 ms
+2023-09-01T17:51:31.451+0800 [restartedMain] WARN AnnotationConfigServletWebServerApplicationContext#refresh:616 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+2023-09-01T17:51:31.499+0800 [restartedMain] INFO StandardService#log:173 - Stopping service [Tomcat]
+2023-09-01T17:51:31.539+0800 [restartedMain] INFO ConditionEvaluationReportLogger#logMessage:82 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-01T17:51:31.603+0800 [restartedMain] ERROR SpringApplication#reportFailure:824 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:550)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.felix.general.code.api.GeneralCodeApiApplication.main(GeneralCodeApiApplication.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 22 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 36 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1310)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1271)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:332)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcCustomConversions(AbstractJdbcConfiguration.java:154)
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcCustomConversions(JdbcRepositoriesAutoConfiguration.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 37 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 57 more
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:332)
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:108)
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:78)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:80)
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:223)
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcDialect(JdbcRepositoriesAutoConfiguration.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 58 more
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'test'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 76 more
+2023-09-01T17:53:02.654+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarting:51 - Starting GeneralCodeApiApplication using Java 20.0.2 with PID 11111 (/Users/lixin/dev/repo/felix/general-code/general-code-api/build/classes/java/main started by lixin in /Users/lixin/dev/repo/felix/general-code)
+2023-09-01T17:53:02.664+0800 [restartedMain] INFO GeneralCodeApiApplication#logStartupProfileInfo:640 - The following 1 profile is active: "dev"
+2023-09-01T17:53:02.721+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-01T17:53:02.721+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-01T17:53:03.640+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:53:03.642+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-01T17:53:03.666+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+2023-09-01T17:53:03.691+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:53:03.693+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-01T17:53:03.709+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2023-09-01T17:53:04.655+0800 [restartedMain] INFO TomcatWebServer#initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2023-09-01T17:53:04.670+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-09-01T17:53:04.673+0800 [restartedMain] INFO StandardService#log:173 - Starting service [Tomcat]
+2023-09-01T17:53:04.674+0800 [restartedMain] INFO StandardEngine#log:173 - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-01T17:53:04.747+0800 [restartedMain] INFO [/]#log:173 - Initializing Spring embedded WebApplicationContext
+2023-09-01T17:53:04.748+0800 [restartedMain] INFO ServletWebServerApplicationContext#prepareWebApplicationContext:291 - Root WebApplicationContext: initialization completed in 2026 ms
+2023-09-01T17:53:07.186+0800 [restartedMain] WARN AnnotationConfigServletWebServerApplicationContext#refresh:616 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+2023-09-01T17:53:07.208+0800 [restartedMain] INFO StandardService#log:173 - Stopping service [Tomcat]
+2023-09-01T17:53:07.223+0800 [restartedMain] INFO ConditionEvaluationReportLogger#logMessage:82 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-09-01T17:53:07.249+0800 [restartedMain] ERROR SpringApplication#reportFailure:824 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jdbcMappingContext' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Unsatisfied dependency expressed through method 'jdbcMappingContext' parameter 1: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:550)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.felix.general.code.api.GeneralCodeApiApplication.main(GeneralCodeApiApplication.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcCustomConversions' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:493)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:888)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 22 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.jdbc.core.convert.JdbcCustomConversions]: Factory method 'jdbcCustomConversions' threw exception with message: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 36 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jdbcDialect' defined in class path resource [org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.class]: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:659)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:647)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1162)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:560)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:225)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1310)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1271)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:484)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:332)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1173)
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcCustomConversions(AbstractJdbcConfiguration.java:154)
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcCustomConversions(JdbcRepositoriesAutoConfiguration.java:121)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 37 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.data.relational.core.dialect.Dialect]: Factory method 'jdbcDialect' threw exception with message: Failed to obtain JDBC Connection
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:171)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	... 57 more
+Caused by: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:84)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:332)
+	at org.springframework.data.jdbc.repository.config.DialectResolver$DefaultDialectProvider.getDialect(DialectResolver.java:108)
+	at org.springframework.data.jdbc.repository.config.DialectResolver.lambda$getDialect$0(DialectResolver.java:78)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1602)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.springframework.data.jdbc.repository.config.DialectResolver.getDialect(DialectResolver.java:80)
+	at org.springframework.data.jdbc.repository.config.AbstractJdbcConfiguration.jdbcDialect(AbstractJdbcConfiguration.java:223)
+	at org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration$SpringBootJdbcConfiguration.jdbcDialect(JdbcRepositoriesAutoConfiguration.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:139)
+	... 58 more
+Caused by: java.sql.SQLSyntaxErrorException: Unknown database 'code'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81)
+	... 76 more
+2023-09-01T17:54:30.322+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarting:51 - Starting GeneralCodeApiApplication using Java 20.0.2 with PID 11463 (/Users/lixin/dev/repo/felix/general-code/general-code-api/build/classes/java/main started by lixin in /Users/lixin/dev/repo/felix/general-code)
+2023-09-01T17:54:30.331+0800 [restartedMain] INFO GeneralCodeApiApplication#logStartupProfileInfo:640 - The following 1 profile is active: "dev"
+2023-09-01T17:54:30.379+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-01T17:54:30.379+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-01T17:54:31.105+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:54:31.107+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-01T17:54:31.126+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 14 ms. Found 0 JDBC repository interfaces.
+2023-09-01T17:54:31.147+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T17:54:31.149+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-01T17:54:31.159+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2023-09-01T17:54:31.924+0800 [restartedMain] INFO TomcatWebServer#initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2023-09-01T17:54:31.935+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-09-01T17:54:31.938+0800 [restartedMain] INFO StandardService#log:173 - Starting service [Tomcat]
+2023-09-01T17:54:31.938+0800 [restartedMain] INFO StandardEngine#log:173 - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-01T17:54:32.003+0800 [restartedMain] INFO [/]#log:173 - Initializing Spring embedded WebApplicationContext
+2023-09-01T17:54:32.004+0800 [restartedMain] INFO ServletWebServerApplicationContext#prepareWebApplicationContext:291 - Root WebApplicationContext: initialization completed in 1623 ms
+2023-09-01T17:54:33.421+0800 [restartedMain] INFO OptionalLiveReloadServer#startServer:59 - LiveReload server is running on port 35729
+2023-09-01T17:54:33.441+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-09-01T17:54:33.471+0800 [restartedMain] INFO TomcatWebServer#start:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-01T17:54:33.483+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarted:57 - Started GeneralCodeApiApplication in 3.803 seconds (process running for 4.747)
+2023-09-01T18:00:09.734+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarting:51 - Starting GeneralCodeApiApplication using Java 20.0.2 with PID 12688 (/Users/lixin/dev/repo/felix/general-code/general-code-api/build/classes/java/main started by lixin in /Users/lixin/dev/repo/felix/general-code)
+2023-09-01T18:00:09.845+0800 [restartedMain] INFO GeneralCodeApiApplication#logStartupProfileInfo:640 - The following 1 profile is active: "dev"
+2023-09-01T18:00:10.234+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-01T18:00:10.235+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-01T18:00:13.893+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T18:00:13.900+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-01T18:00:13.971+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 51 ms. Found 0 JDBC repository interfaces.
+2023-09-01T18:00:14.035+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T18:00:14.040+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-01T18:00:14.088+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2023-09-01T18:00:17.516+0800 [restartedMain] INFO TomcatWebServer#initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2023-09-01T18:00:17.578+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-09-01T18:00:17.626+0800 [restartedMain] INFO StandardService#log:173 - Starting service [Tomcat]
+2023-09-01T18:00:17.628+0800 [restartedMain] INFO StandardEngine#log:173 - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-01T18:00:17.906+0800 [restartedMain] INFO [/]#log:173 - Initializing Spring embedded WebApplicationContext
+2023-09-01T18:00:17.908+0800 [restartedMain] INFO ServletWebServerApplicationContext#prepareWebApplicationContext:291 - Root WebApplicationContext: initialization completed in 7670 ms
+2023-09-01T18:00:21.480+0800 [restartedMain] INFO HikariDataSource#getConnection:110 - general_code_db - Starting...
+2023-09-01T18:00:22.910+0800 [restartedMain] INFO HikariPool#checkFailFast:565 - general_code_db - Added connection com.mysql.cj.jdbc.ConnectionImpl@230be3eb
+2023-09-01T18:00:22.918+0800 [restartedMain] INFO HikariDataSource#getConnection:123 - general_code_db - Start completed.
+2023-09-01T18:00:23.701+0800 [restartedMain] INFO OptionalLiveReloadServer#startServer:59 - LiveReload server is running on port 35729
+2023-09-01T18:00:23.774+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-09-01T18:00:23.948+0800 [restartedMain] INFO TomcatWebServer#start:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-01T18:00:24.019+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarted:57 - Started GeneralCodeApiApplication in 18.655 seconds (process running for 27.112)
+2023-09-01T19:01:25.733+0800 [general_code_db housekeeper] WARN HikariPool#run:804 - general_code_db - Thread starvation or clock leap detected (housekeeper delta=2m1s995ms).
+2023-09-01T19:02:26.919+0800 [general_code_db housekeeper] WARN HikariPool#run:804 - general_code_db - Thread starvation or clock leap detected (housekeeper delta=1m1s200ms).
+2023-09-01T19:04:39.694+0800 [SpringApplicationShutdownHook] INFO HikariDataSource#close:350 - general_code_db - Shutdown initiated...
+2023-09-01T19:04:39.748+0800 [SpringApplicationShutdownHook] INFO HikariDataSource#close:352 - general_code_db - Shutdown completed.
+2023-09-01T19:13:38.272+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarting:51 - Starting GeneralCodeApiApplication using Java 20.0.2 with PID 29058 (/Users/lixin/dev/repo/felix/general-code/general-code-api/build/classes/java/main started by lixin in /Users/lixin/dev/repo/felix/general-code)
+2023-09-01T19:13:38.289+0800 [restartedMain] INFO GeneralCodeApiApplication#logStartupProfileInfo:640 - The following 1 profile is active: "dev"
+2023-09-01T19:13:38.390+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-01T19:13:38.391+0800 [restartedMain] INFO DevToolsPropertyDefaultsPostProcessor#logTo:250 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-01T19:13:40.454+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T19:13:40.457+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-01T19:13:40.503+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 36 ms. Found 0 JDBC repository interfaces.
+2023-09-01T19:13:40.555+0800 [restartedMain] INFO RepositoryConfigurationDelegate#multipleStoresDetected:291 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-09-01T19:13:40.559+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:138 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-09-01T19:13:40.585+0800 [restartedMain] INFO RepositoryConfigurationDelegate#registerRepositoriesIn:208 - Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2023-09-01T19:13:42.411+0800 [restartedMain] INFO TomcatWebServer#initialize:108 - Tomcat initialized with port(s): 8080 (http)
+2023-09-01T19:13:42.447+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-09-01T19:13:42.452+0800 [restartedMain] INFO StandardService#log:173 - Starting service [Tomcat]
+2023-09-01T19:13:42.452+0800 [restartedMain] INFO StandardEngine#log:173 - Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-01T19:13:42.560+0800 [restartedMain] INFO [/]#log:173 - Initializing Spring embedded WebApplicationContext
+2023-09-01T19:13:42.560+0800 [restartedMain] INFO ServletWebServerApplicationContext#prepareWebApplicationContext:291 - Root WebApplicationContext: initialization completed in 4168 ms
+2023-09-01T19:13:44.201+0800 [restartedMain] INFO HikariDataSource#getConnection:110 - general_code_db - Starting...
+2023-09-01T19:13:45.058+0800 [restartedMain] INFO HikariPool#checkFailFast:565 - general_code_db - Added connection com.mysql.cj.jdbc.ConnectionImpl@73cf0f15
+2023-09-01T19:13:45.070+0800 [restartedMain] INFO HikariDataSource#getConnection:123 - general_code_db - Start completed.
+2023-09-01T19:13:45.465+0800 [restartedMain] INFO OptionalLiveReloadServer#startServer:59 - LiveReload server is running on port 35729
+2023-09-01T19:13:45.573+0800 [restartedMain] INFO Http11NioProtocol#log:173 - Starting ProtocolHandler ["http-nio-8080"]
+2023-09-01T19:13:45.631+0800 [restartedMain] INFO TomcatWebServer#start:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-01T19:13:45.649+0800 [restartedMain] INFO GeneralCodeApiApplication#logStarted:57 - Started GeneralCodeApiApplication in 8.804 seconds (process running for 11.66)
+2023-09-01T19:13:58.106+0800 [SpringApplicationShutdownHook] INFO HikariDataSource#close:350 - general_code_db - Shutdown initiated...
+2023-09-01T19:13:58.172+0800 [SpringApplicationShutdownHook] INFO HikariDataSource#close:352 - general_code_db - Shutdown completed.
