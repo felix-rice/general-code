@@ -21,12 +21,12 @@ allprojects {
     apply plugin: 'io.spring.dependency-management'
 
     java {
-        sourceCompatibility = '20'
+        sourceCompatibility = '21'
     }
 
     // 基本jdk配置
-    sourceCompatibility = 20
-    targetCompatibility = 20
+    sourceCompatibility = 21
+    targetCompatibility = 21
 
     compileJava.options.encoding  'UTF-8'
     compileTestJava.options.encoding 'UTF-8'
@@ -55,6 +55,8 @@ subprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-log4j2'
         implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'com.google.guava:guava:+'
+
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }
@@ -65,6 +67,7 @@ project("general-code-sdk") {
 }
 
 project("general-code-core") {
+    apply plugin: 'java-library'
     dependencies {
         implementation project(':general-code-sdk')
         implementation 'org.springframework.boot:spring-boot-starter-data-redis'
