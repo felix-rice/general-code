@@ -14,4 +14,29 @@ package com.felix.general.code.daily.practice.leetcode.face;
  * Created on 2024-02-01
  */
 public class LongestCommonPrefix {
+    public String longestCommonPrefix(String[] strs) {
+        StringBuilder sb = new StringBuilder();
+        int minLen = Integer.MAX_VALUE;
+        for (String str : strs) {
+            minLen = Math.min(minLen, str.length());
+            if (minLen == 0) {
+                return "";
+            }
+        }
+        for (int i = 0; i < minLen; i++) {
+            char c = strs[0].charAt(i);
+            boolean allEquals = true;
+            for (String str : strs) {
+                if (str.charAt(i) != c) {
+                    allEquals = false;
+                    break;
+                }
+            }
+            if (!allEquals) {
+                break;
+            }
+            sb.append(c);
+        }
+        return sb.toString();
+    }
 }
