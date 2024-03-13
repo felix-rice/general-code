@@ -1,5 +1,6 @@
 package com.felix.general.code.core.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -28,6 +29,16 @@ public class RedisServiceImpl implements RedisService {
         } catch (Exception e) {
             logger.error("redis set error.", e);
             return false;
+        }
+    }
+
+    @Override
+    public String get(String key) {
+        try {
+            return redisTemplate.opsForValue().get(key);
+        } catch (Exception e) {
+            logger.error("redis set error.", e);
+            return StringUtils.EMPTY;
         }
     }
 }

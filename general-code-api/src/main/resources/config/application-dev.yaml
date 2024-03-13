@@ -8,8 +8,8 @@ spring:
   datasource:
     name: general_code_db
     url: jdbc:mysql://172.28.195.72:3306/general_code
-    username: lixin_dev
-    password: lx566024201@!!@(*
+    username: felix
+    password: mauFLXuf5dhLXQrjjLX
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
 
@@ -22,4 +22,4 @@ spring:
           max-idle: 16
           max-active: 32
           min-idle: 8
-      password: root
+      password: eYVX7EwVLXxKPCDmLXtyKVLX8oLd2t81

@@ -53,14 +53,14 @@ subprojects {
 
     // 公共依赖
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-log4j2'
-        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-log4j2:+'
+        implementation 'org.springframework.boot:spring-boot-starter:+'
         implementation 'com.google.guava:guava:+'
         implementation 'org.apache.commons:commons-collections4:+'
         implementation 'org.apache.commons:commons-lang3:+'
 
-        developmentOnly 'org.springframework.boot:spring-boot-devtools'
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        developmentOnly 'org.springframework.boot:spring-boot-devtools:+'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test:+'
     }
 }
 
@@ -91,6 +91,7 @@ project("general-code-component") {
 project("general-code-api") {
     apply plugin: 'java-library'
     dependencies {
+        compileOnly 'org.projectlombok:lombok:+'
         implementation project(":general-code-component")
         implementation 'org.springframework.boot:spring-boot-starter-web'
     }

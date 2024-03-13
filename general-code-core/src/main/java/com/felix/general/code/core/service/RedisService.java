@@ -6,4 +6,5 @@ package com.felix.general.code.core.service;
  */
 public interface RedisService {
     boolean set(String key, String value);
+    String get(String key);
 }
